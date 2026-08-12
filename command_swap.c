@@ -1,40 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   compute_disorder.c                                 :+:      :+:    :+:   */
+/*   command_utils.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: smasatak <smasatak@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/07/20 16:00:34 by rnoda             #+#    #+#             */
-/*   Updated: 2026/08/12 17:12:05 by smasatak         ###   ########.fr       */
+/*   Created: 2026/08/11 06:20:03 by smasatak          #+#    #+#             */
+/*   Updated: 2026/08/12 12:16:58 by smasatak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	compute_disorder(t_stack *s)
+static void	swap(t_stack *s)
 {
-	int	i;
-	int	j;
-	long	mistakes;
-	long	total_pirs;
+	int	tmp;
 
-	i = 0;
-	mistakes = 0;
-	total_pirs = 0;
 	if (s->size < 2)
-		return (0);
-	while (i < s->size - 1)
-	{
-		j = i + 1;
-		while (j < s->size)
-		{
-			total_pirs++;
-			if (s->array[i] > s->array[j])
-				mistakes++;
-			j++;
-		}
-		i++;
-	}
-	return (mistakes * 10000 / total_pirs);
+		return ;
+	tmp = s->array[0];
+	s->array[0] = s->array[1];
+	s->array[1] = tmp;
+}
+
+void	sa(t_ctx *c)
+{
+	swap(&c->a);
+}
+
+void	sb(t_ctx *c)
+{
+	swap(&c->b);
+}
+
+void	ss(t_ctx *c)
+{
+	sa(c);
+	sb(c);
 }

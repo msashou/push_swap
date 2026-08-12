@@ -1,40 +1,44 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   compute_disorder.c                                 :+:      :+:    :+:   */
+/*   Complex_algorithm.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: smasatak <smasatak@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/07/20 16:00:34 by rnoda             #+#    #+#             */
-/*   Updated: 2026/08/12 17:12:05 by smasatak         ###   ########.fr       */
+/*   Created: 2026/08/12 16:46:02 by smasatak          #+#    #+#             */
+/*   Updated: 2026/08/12 16:48:23 by smasatak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	compute_disorder(t_stack *s)
+static void	attach_index(t_ctx *c)
 {
+	int	index[c->a.size];
 	int	i;
 	int	j;
-	long	mistakes;
-	long	total_pirs;
+	int	count;
 
 	i = 0;
-	mistakes = 0;
-	total_pirs = 0;
-	if (s->size < 2)
-		return (0);
-	while (i < s->size - 1)
+	j = 0;
+	count = 0;
+	while (i <= c->a.size)
 	{
-		j = i + 1;
-		while (j < s->size)
+		j = 0;
+		count = 0;
+		while (j <= c->a.size)
 		{
-			total_pirs++;
-			if (s->array[i] > s->array[j])
-				mistakes++;
+			if (c->a.array[i] > c->a.array[j])
+				count++;
 			j++;
 		}
+		index[i] = count;
 		i++;
 	}
-	return (mistakes * 10000 / total_pirs);
+	i = 0;
+	while (i <= c->a.size)
+	{
+		c->a.array[i] = index[i];
+		i++;
+	}
 }

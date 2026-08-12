@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rnoda <rnoda@student.42tokyo.jp>           +#+  +:+       +#+        */
+/*   By: smasatak <smasatak@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/20 16:36:37 by rnoda             #+#    #+#             */
-/*   Updated: 2026/07/20 17:28:17 by rnoda            ###   ########.fr       */
+/*   Updated: 2026/08/12 12:40:39 by smasatak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,36 +15,36 @@
 
 
 
-void push_swap()
-{
+// void push_swap()
+// {
 
-	t_double_linked_list stack_b;
-	// stask_bの初期化
-	return;
-}
+// 	t_double_linked_list stack_b;
+// 	// stask_bの初期化
+// 	return;
+// }
 
-int main(int ac, char **av)
-{
-	t_double_linked_list stack_a;
-
-
-	// 入力値のバリデーション
-
-	// 正しい入力値ならばパースする
-	// stack_a, bを初期化する
-	// オプション指定があるかないかチェックする
-	// chekerを使用する場合の入力かどうかチェックする
-
-	// バリデーション完了
+// int main(int ac, char **av)
+// {
+// 	t_double_linked_list stack_a;
 
 
-	// disorderの計算
-	// ソート戦略の判断
+// 	// 入力値のバリデーション
 
-	//
-	push_swap();
+// 	// 正しい入力値ならばパースする
+// 	// stack_a, bを初期化する
+// 	// オプション指定があるかないかチェックする
+// 	// chekerを使用する場合の入力かどうかチェックする
 
-	// 手順のリストを出力するか、ベンチマークを出力するか判断
-	// output();
-	return (0);
-}
+// 	// バリデーション完了
+
+
+// 	// disorderの計算
+// 	// ソート戦略の判断
+
+// 	//
+// 	push_swap();
+
+// 	// 手順のリストを出力するか、ベンチマークを出力するか判断
+// 	// output();
+// 	return (0);
+// }

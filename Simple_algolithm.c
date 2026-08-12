@@ -1,40 +1,52 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   compute_disorder.c                                 :+:      :+:    :+:   */
+/*   Simple_algolithm.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: smasatak <smasatak@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/07/20 16:00:34 by rnoda             #+#    #+#             */
-/*   Updated: 2026/08/12 17:12:05 by smasatak         ###   ########.fr       */
+/*   Created: 2026/08/11 20:24:49 by smasatak          #+#    #+#             */
+/*   Updated: 2026/08/12 16:08:30 by smasatak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	compute_disorder(t_stack *s)
+static int	find_min_index(t_stack *s)
 {
+	int	min;
 	int	i;
-	int	j;
-	long	mistakes;
-	long	total_pirs;
 
-	i = 0;
-	mistakes = 0;
-	total_pirs = 0;
-	if (s->size < 2)
-		return (0);
-	while (i < s->size - 1)
+	min = 0;
+	i = 1;
+	while (i < s->size)
 	{
-		j = i + 1;
-		while (j < s->size)
-		{
-			total_pirs++;
-			if (s->array[i] > s->array[j])
-				mistakes++;
-			j++;
-		}
+		if (s->array[min] > s->array[i])
+			min = i;
 		i++;
 	}
-	return (mistakes * 10000 / total_pirs);
+	return (min);
+}
+
+void	selection_sort(t_ctx *c)
+{
+	int	min;
+	int	i;
+
+	while (c->a.size > 0)
+	{
+		min = find_min_index(&c->a);
+		i = 0;
+		if (min < c->a.size / 2)
+			while(i++ < min)
+				ra(c);
+		else
+			while(i++ < c->a.size - min)
+				rra(c);
+		pb(c);
+	}
+	while (c->b.size > 0)
+	{
+		pa(c);
+	}
 }

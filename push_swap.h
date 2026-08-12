@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rnoda <rnoda@student.42tokyo.jp>           +#+  +:+       +#+        */
+/*   By: smasatak <smasatak@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/20 16:30:27 by rnoda             #+#    #+#             */
-/*   Updated: 2026/07/20 17:58:54 by rnoda            ###   ########.fr       */
+/*   Updated: 2026/08/12 17:15:58 by smasatak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,34 +18,41 @@
 # define COMPLEX "complex"
 # define ADAPTIVE "adaptive"
 
-typedef struct s_double_linked_list
+//prepare stacks
+typedef struct stack
 {
-	int							*value;
-	struct s_double_linked_list	*next;
-	struct s_double_linked_list	*prev;
-}								t_dll;
+	int	*array;
+	int	size;
+}	t_stack;
 
-// 双方向循環リストを操作する関数をいっぱい書く
+typedef struct operate_stacks
+{
+	t_stack	a;
+	t_stack	b;
+}	t_ctx;
+
+//compute disorder
+int	compute_disorder(t_stack *s);
+
+//command function
+void	sa(t_ctx *c);
+void	sb(t_ctx *c);
+void	ss(t_ctx *c);
+void	pa(t_ctx *c);
+void	pb(t_ctx *c);
+void	ra(t_ctx *c);
+void	rb(t_ctx *c);
+void	rr(t_ctx *c);
+void	rra(t_ctx *c);
+void	rrb(t_ctx *c);
+void	rrr(t_ctx *c);
 
 
-// スタックを操作する関数を１１個書く
-void sa(t_dll **stack_a);
-void sb(t_dll **stack_b);
-void ss(t_dll **stack_a);
-void pa(t_dll **stack_a, t_dll **stack_b);
-void pb(t_dll **stack_a, t_dll **stack_b);
-void ra(t_dll **stack_a);
-void rb(t_dll **stack_b);
-void rr(t_dll **stack_a, t_dll **stack_b);
-void rra(t_dll **stack_a);
-void rrb(t_dll **stack_b);
-void rrr(t_dll **stack_a, t_dll **stack_b);
 
-// ソートする関数をsimple medium complex で３つ書く　エッジケースを最適化するソートも書く
-void simple_sort(t_dll **stack_a, t_dll stack_b);
-void medium_sort(t_dll **stack_a, t_dll stack_b);
-void complex_sort(t_dll **stack_a, t_dll stack_b);
-void three_sort(t_dll **stack_a, t_dll stack_b); // エッジケース用
-void five_sort(t_dll **stack_a, t_dll stack_b); // エッジケース用
+void	selection_sort(t_ctx *c);
+// void medium_sort(t_dll **stack_a, t_dll stack_b);
+// void complex_sort(t_dll **stack_a, t_dll stack_b);
+// void three_sort(t_dll **stack_a, t_dll stack_b); // エッジケース用
+// void five_sort(t_dll **stack_a, t_dll stack_b); // エッジケース用
 
 #endif

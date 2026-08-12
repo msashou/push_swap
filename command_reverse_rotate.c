@@ -1,40 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   compute_disorder.c                                 :+:      :+:    :+:   */
+/*   command_reverse_rotate.c                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: smasatak <smasatak@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/07/20 16:00:34 by rnoda             #+#    #+#             */
-/*   Updated: 2026/08/12 17:12:05 by smasatak         ###   ########.fr       */
+/*   Created: 2026/08/12 12:20:47 by smasatak          #+#    #+#             */
+/*   Updated: 2026/08/12 12:34:36 by smasatak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	compute_disorder(t_stack *s)
+static void	reverse_rotate(t_stack *s)
 {
+	int	tmp;
 	int	i;
-	int	j;
-	long	mistakes;
-	long	total_pirs;
 
-	i = 0;
-	mistakes = 0;
-	total_pirs = 0;
-	if (s->size < 2)
-		return (0);
-	while (i < s->size - 1)
+	tmp = s->array[s->size - 1];
+	i = s->size - 1;
+	while(i >= 1)
 	{
-		j = i + 1;
-		while (j < s->size)
-		{
-			total_pirs++;
-			if (s->array[i] > s->array[j])
-				mistakes++;
-			j++;
-		}
-		i++;
+		s->array[i] = s->array[i - 1];
+		i--;
 	}
-	return (mistakes * 10000 / total_pirs);
+	s->array[0] = tmp;
+}
+
+void	rra(t_ctx *c)
+{
+	reverse_rotate(&c->a);
+}
+void	rrb(t_ctx *c)
+{
+	reverse_rotate(&c->b);
+}
+
+void	rrr(t_ctx *c)
+{
+	reverse_rotate(&c->a);
+	reverse_rotate(&c->b);
 }

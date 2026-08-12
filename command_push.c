@@ -1,40 +1,50 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   compute_disorder.c                                 :+:      :+:    :+:   */
+/*   command_push.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: smasatak <smasatak@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/07/20 16:00:34 by rnoda             #+#    #+#             */
-/*   Updated: 2026/08/12 17:12:05 by smasatak         ###   ########.fr       */
+/*   Created: 2026/08/11 12:50:25 by smasatak          #+#    #+#             */
+/*   Updated: 2026/08/12 12:31:06 by smasatak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	compute_disorder(t_stack *s)
+static void	push(t_stack *from, t_stack *to)
 {
+	int	tmp;
 	int	i;
-	int	j;
-	long	mistakes;
-	long	total_pirs;
+	int	n;
 
-	i = 0;
-	mistakes = 0;
-	total_pirs = 0;
-	if (s->size < 2)
-		return (0);
-	while (i < s->size - 1)
+	n = 0;
+	tmp = 0;
+	if (from->size == 0)
+		return ;
+	i = to->size;
+	tmp = from->array[0];
+	while (i >= 1)
 	{
-		j = i + 1;
-		while (j < s->size)
-		{
-			total_pirs++;
-			if (s->array[i] > s->array[j])
-				mistakes++;
-			j++;
-		}
-		i++;
+		to->array[i] = to->array[i - 1];
+		i--;
 	}
-	return (mistakes * 10000 / total_pirs);
+	to->size++;
+	while (n < from->size - 1)
+	{
+		from->array[n] = from->array[n + 1];
+		n++;
+	}
+	from->size--;
+	to->array[0] = tmp;
+}
+
+void	pa(t_ctx *c)
+{
+	push(&c->b, &c->a);
+}
+
+void	pb(t_ctx *c)
+{
+	push(&c->a, &c->b);
 }
