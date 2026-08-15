@@ -6,7 +6,7 @@
 /*   By: smasatak <smasatak@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/11 12:50:25 by smasatak          #+#    #+#             */
-/*   Updated: 2026/08/12 12:31:06 by smasatak         ###   ########.fr       */
+/*   Updated: 2026/08/15 11:57:44 by smasatak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,9 +42,11 @@ static void	push(t_stack *from, t_stack *to)
 void	pa(t_ctx *c)
 {
 	push(&c->b, &c->a);
+	record_op(c, OP_PA);
 }
 
 void	pb(t_ctx *c)
 {
 	push(&c->a, &c->b);
+	record_op(c, OP_PB);
 }

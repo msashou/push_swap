@@ -1,48 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   command_rotate.c                                   :+:      :+:    :+:   */
+/*   record_op.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: smasatak <smasatak@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/08/11 12:49:26 by smasatak          #+#    #+#             */
-/*   Updated: 2026/08/15 11:18:42 by smasatak         ###   ########.fr       */
+/*   Created: 2026/08/15 11:04:36 by smasatak          #+#    #+#             */
+/*   Updated: 2026/08/15 12:04:32 by smasatak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static void	rotate(t_stack *s)
+void	record_op(t_ctx *c, t_op op)
 {
-	int	tmp;
-	int	i;
+	c->ops[c->n_ops++] = op;
+	c->counts[op]++;
+}
 
-	tmp = s->array[0];
+void	print_ops(t_ctx *c)
+{
+	static const char	*names[] = {"sa", "sb", "ss", "pa", "pb",
+					"ra", "rb", "rr", "rra", "rrb", "rrr"};
+	int			i;
+
 	i = 0;
-	while (i < s->size - 1)
-	{
-		s->array[i] = s->array[i + 1];
-		i++;
-	}
-	s->array[s->size - 1] = tmp;
+	while (i < c->n_ops)
+		printf("%s\n", names[c->ops[i++]]);
 }
-
-void	ra(t_ctx *c)
-{
-	rotate(&c->a);
-	record_op(c, OP_RA);
-}
-
-void	rb(t_ctx *c)
-{
-	rotate(&c->b);
-	record_op(c, OP_RB);
-}
-
-void	rr(t_ctx *c)
-{
-	ra(c);
-	rb(c);
-	record_op(c, OP_RR);
-}
-

@@ -6,7 +6,7 @@
 /*   By: smasatak <smasatak@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/12 12:20:47 by smasatak          #+#    #+#             */
-/*   Updated: 2026/08/12 12:34:36 by smasatak         ###   ########.fr       */
+/*   Updated: 2026/08/15 11:20:13 by smasatak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,14 +30,17 @@ static void	reverse_rotate(t_stack *s)
 void	rra(t_ctx *c)
 {
 	reverse_rotate(&c->a);
+	record_op(c, OP_RRA);
 }
 void	rrb(t_ctx *c)
 {
 	reverse_rotate(&c->b);
+	record_op(c, OP_RRB);
 }
 
 void	rrr(t_ctx *c)
 {
 	reverse_rotate(&c->a);
 	reverse_rotate(&c->b);
+	record_op(c, OP_RRR);
 }

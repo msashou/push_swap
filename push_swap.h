@@ -6,7 +6,7 @@
 /*   By: smasatak <smasatak@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/20 16:30:27 by rnoda             #+#    #+#             */
-/*   Updated: 2026/08/12 17:15:58 by smasatak         ###   ########.fr       */
+/*   Updated: 2026/08/15 11:07:34 by smasatak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,10 +25,19 @@ typedef struct stack
 	int	size;
 }	t_stack;
 
+typedef enum e_op
+{
+	OP_SA, OP_SB, OP_SS, OP_PA, OP_PB,
+	OP_RA, OP_RB, OP_RR, OP_RRA, OP_RRB, OP_RRR,
+}	t_op;
+
 typedef struct operate_stacks
 {
 	t_stack	a;
 	t_stack	b;
+	t_op	*ops;
+	int	n_ops;
+	int	counts[11];
 }	t_ctx;
 
 //compute disorder
@@ -46,8 +55,6 @@ void	rr(t_ctx *c);
 void	rra(t_ctx *c);
 void	rrb(t_ctx *c);
 void	rrr(t_ctx *c);
-
-
 
 void	selection_sort(t_ctx *c);
 // void medium_sort(t_dll **stack_a, t_dll stack_b);

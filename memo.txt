@@ -103,8 +103,29 @@ void	attach_index(int *array, 2)
 
 a の要素が残っている間;
 	fin_min_indexで位置を取る
-	位置がsize/2より前ならraを繰り返す、後ならrraを繰り返す
+	位置のindexがsize/2より前ならraを繰り返す、後ならrraを繰り返す
 	pbでbに送る
 
 bが空になるまでpa
+
+function compute_disorder(stack a):
+mistakes = 0
+total_pairs = 0
+for i from 0 to size(a)-1:
+for j from i+1 to size(a)-1:
+total_pairs += 1
+if a[i] > a[j]:
+mistakes += 1
+return mistakes / total_pairs
+
+<基数ソート>
+1.処理する桁数を知るために最大値を求める
+2.最下位桁(1の桁)から始める
+3.計数ソートを使ってその桁で配列を安定に並び替える。
+4.次のより上位の桁へ移る。
+5.すべての桁位置を処理するまで繰り返す。
+
+
+
+
 
