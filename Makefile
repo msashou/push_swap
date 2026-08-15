@@ -6,71 +6,39 @@
 #    By: rnoda <rnoda@student.42tokyo.jp>           +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/07/03 19:06:53 by rnoda             #+#    #+#              #
-#    Updated: 2026/07/20 15:53:13 by rnoda            ###   ########.fr        #
+#    Updated: 2026/08/15 19:27:20 by rnoda            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-
-
-NAME = libft.a
+NAME = push_swap
 CC = cc
-CFLAGS = -Wall -Werror -Wextra
-AR = ar rcs
+CFLAGS = -Wall -Wextra -Werror
 
-SRC = ft_isalpha \
-	ft_isdigit \
-	ft_isalnum \
-	ft_isascii \
-	ft_isprint \
-	ft_strlen \
-	ft_memset \
-	ft_bzero \
-	ft_memcpy \
-	ft_memmove \
-	ft_strlcpy \
-	ft_strlcat \
-	ft_toupper \
-	ft_tolower \
-	ft_strchr \
-	ft_strrchr \
-	ft_strncmp \
-	ft_memchr \
-	ft_memcmp \
-	ft_strnstr \
-	ft_atoi \
-	ft_calloc \
-	ft_strdup \
-	ft_substr \
-	ft_strjoin \
-	ft_strtrim \
-	ft_split \
-	ft_itoa \
-	ft_strmapi \
-	ft_striteri \
-	ft_putchar_fd \
-	ft_putstr_fd \
-	ft_putendl_fd \
-	ft_putnbr_fd \
-	ft_lstnew \
-	ft_lstadd_front \
-	ft_lstsize \
-	ft_lstlast \
-	ft_lstadd_back \
-	ft_lstdelone \
-	ft_lstclear \
-	ft_lstiter \
-	ft_lstmap
+SRC = push_swap \
+      ft_calloc \
+      ft_strjoin \
+      ft_split \
+	  ft_strlen \
+	  ft_memcmp \
+	  ft_itoa \
+	  ft_atoi \
+	  ft_strdup \
+	  ft_strlcpy \
+	  is_num \
+	  output_err \
+	  parser
+
 
 SRCS = $(addsuffix .c, $(SRC))
 OBJS = $(addsuffix .o, $(SRC))
 
-%.o: %.c
-	$(CC) $(CFLAGS) -c $< -o $@
+all: $(NAME)
 
 $(NAME): $(OBJS)
-	ar rcs $(NAME) $(OBJS)
+	$(CC) $(CFLAGS) $(OBJS) -o $(NAME)
 
-all: $(NAME)
+%.o: %.c
+	$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
 	rm -f $(OBJS)

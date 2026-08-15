@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: smasatak <smasatak@student.42tokyo.jp>     +#+  +:+       +#+        */
+/*   By: rnoda <rnoda@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/20 16:30:27 by rnoda             #+#    #+#             */
-/*   Updated: 2026/08/15 11:07:34 by smasatak         ###   ########.fr       */
+/*   Updated: 2026/08/15 19:23:46 by rnoda            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,17 @@
 # define MEDIUM "medium"
 # define COMPLEX "complex"
 # define ADAPTIVE "adaptive"
+
+# define OPTION_SIMPLE "--simple"
+# define OPTION_MEDIUM "--medium"
+# define OPTION_COMPLEX "--complex"
+# define OPTION_ADAPTIVE "--adaptive"
+# define OPTION_BENCH "--bench"
+
+#include "unistd.h"
+#include "stdlib.h"
+#include "limits.h"
+
 
 //prepare stacks
 typedef struct stack
@@ -61,5 +72,24 @@ void	selection_sort(t_ctx *c);
 // void complex_sort(t_dll **stack_a, t_dll stack_b);
 // void three_sort(t_dll **stack_a, t_dll stack_b); // エッジケース用
 // void five_sort(t_dll **stack_a, t_dll stack_b); // エッジケース用
+
+char	**ft_split(char const *s, char c);
+void	*ft_calloc(size_t nmemb, size_t size);
+char	*ft_strjoin(char const *s1, char const *s2);
+size_t	ft_strlen(const char *s);
+int	ft_memcmp(const void *s1, const void *s2, size_t n);
+char	*ft_itoa(int n);
+char	*ft_strdup(const char *s);
+size_t	ft_strlcpy(char *dst, const char *src, size_t size);
+int	ft_atoi(const char *nptr);
+int	is_num(char c);
+int	output_err(void);
+
+
+char	**join_and_split(char **av);
+int	validate_args(char **args);
+int	parse(char **args, int *is_bench_mode, char **strategy, int **init_a);
+int	check_duplicates(int *init_a, int size);
+
 
 #endif
