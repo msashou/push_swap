@@ -1,39 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   compute_disorder.c                                 :+:      :+:    :+:   */
+/*   attach_index.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rnoda <rnoda@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/08/18 00:25:26 by rnoda             #+#    #+#             */
-/*   Updated: 2026/08/18 00:25:27 by rnoda            ###   ########.fr       */
+/*   Created: 2026/08/18 00:24:44 by rnoda             #+#    #+#             */
+/*   Updated: 2026/08/18 00:24:45 by rnoda            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-double	compute_disorder(t_stack *s)
+int	attach_index(t_ctx *c)
 {
-	int		i;
-	int		j;
-	long	mistakes;
-	long	total_pairs;
+	int *idx;
+	int i;
+	int j;
 
-	if (!s || s->size < 2)
-		return (0.0);
-	i = 0;
-	mistakes = 0;
-	total_pairs = 0;
-	while (i < s->size - 1)
+	idx = (int *)malloc(sizeof(int) * c->a.size);
+	if (!idx)
+		return (0);
+	i = -1;
+	while (++i < c->a.size)
 	{
-		j = i;
-		while (++j < s->size)
+		j = -1;
+		idx[i] = 0;
+		while (++j < c->a.size)
 		{
-			total_pairs++;
-			if (s->array[i] > s->array[j])
-				mistakes++;
+			if (c->a.array[i] > c->a.array[j])
+				idx[i]++;
 		}
-		i++;
 	}
-	return ((double)mistakes / (double)total_pairs);
+	i = -1;
+	while (++i < c->a.size)
+		c->a.array[i] = idx[i];
+	free(idx);
+	return (1);
 }

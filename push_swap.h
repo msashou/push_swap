@@ -27,6 +27,8 @@
 #include "unistd.h"
 #include "stdlib.h"
 #include "limits.h"
+// TODO: 後で消す
+#include "stdio.h"
 
 
 //prepare stacks
@@ -52,7 +54,7 @@ typedef struct operate_stacks
 }	t_ctx;
 
 //compute disorder
-int	compute_disorder(t_stack *s);
+double	compute_disorder(t_stack *s);
 
 //command function
 void	sa(t_ctx *c);
@@ -91,5 +93,8 @@ int	validate_args(char **args);
 int	parse(char **args, int *is_bench_mode, char **strategy, int **init_a);
 int	check_duplicates(int *init_a, int size);
 
+void	record_op(t_ctx *c, t_op op);
+int		attach_index(t_ctx *c);
+void	medium_sort(t_ctx *c);
 
 #endif

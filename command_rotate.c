@@ -17,13 +17,12 @@ static void	rotate(t_stack *s)
 	int	tmp;
 	int	i;
 
+	if (s->size < 2)
+		return ;
 	tmp = s->array[0];
-	i = 0;
-	while (i < s->size - 1)
-	{
+	i = -1;
+	while (++i < s->size - 1)
 		s->array[i] = s->array[i + 1];
-		i++;
-	}
 	s->array[s->size - 1] = tmp;
 }
 
@@ -41,8 +40,7 @@ void	rb(t_ctx *c)
 
 void	rr(t_ctx *c)
 {
-	ra(c);
-	rb(c);
+	rotate(&c->a);
+	rotate(&c->b);
 	record_op(c, OP_RR);
 }
-

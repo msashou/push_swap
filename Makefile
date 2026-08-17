@@ -26,7 +26,15 @@ SRC = push_swap \
 	  ft_strlcpy \
 	  is_num \
 	  output_err \
-	  parser
+	  parser \
+	  attach_index \
+	  medium_sort \
+	  command_push \
+	  command_reverse_rotate \
+	  command_rotate \
+	  command_swap \
+	  compute_disorder \
+	  record_op
 
 
 SRCS = $(addsuffix .c, $(SRC))

@@ -37,7 +37,7 @@ void	sb(t_ctx *c)
 
 void	ss(t_ctx *c)
 {
-	sa(c);
-	sb(c);
+	swap(&c->a);
+	swap(&c->b);
 	record_op(c, OP_SS);
 }

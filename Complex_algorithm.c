@@ -3,48 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   Complex_algorithm.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: smasatak <smasatak@student.42tokyo.jp>     +#+  +:+       +#+        */
+/*   By: rnoda <rnoda@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/12 16:46:02 by smasatak          #+#    #+#             */
-/*   Updated: 2026/08/15 15:22:44 by smasatak         ###   ########.fr       */
+/*   Updated: 2026/08/18 00:25:22 by rnoda            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 #include <stdio.h>
 
-static void	attach_index(t_ctx *c)
-{
-	int	index[c->a.size];
-	int	i;
-	int	j;
-	int	count;
-
-	i = 0;
-	j = 0;
-	count = 0;
-	while (i < c->a.size)
-	{
-		j = 0;
-		count = 0;
-		while (j < c->a.size)
-		{
-			if (c->a.array[i] > c->a.array[j])
-				count++;
-			j++;
-		}
-		index[i] = count;
-		i++;
-	}
-	i = 0;
-	while (i < c->a.size)
-	{
-		c->a.array[i] = index[i];
-		i++;
-	}
-}
-
-static void	convert_binary()
+static void	convert_binary();
 
 
 // void	print_stack(t_stack *s)

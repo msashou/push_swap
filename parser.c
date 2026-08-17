@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   parser.c                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: rnoda <rnoda@student.42tokyo.jp>           +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/08/18 00:25:38 by rnoda             #+#    #+#             */
+/*   Updated: 2026/08/18 00:25:39 by rnoda            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
 char	**join_and_split(char **av)
@@ -81,9 +93,6 @@ int	is_option_bench(char *s)
 
 int	is_option_strategy(char *s)
 {
-	size_t	len;
-
-	len = ft_strlen(s);
 	return (is_option(s, OPTION_SIMPLE) || is_option(s, OPTION_MEDIUM)
 		|| is_option(s, OPTION_COMPLEX) || is_option(s, OPTION_ADAPTIVE));
 }
