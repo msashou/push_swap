@@ -6,7 +6,7 @@
 /*   By: smasatak <smasatak@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/09 15:05:15 by smasatak          #+#    #+#             */
-/*   Updated: 2026/08/15 13:33:48 by smasatak         ###   ########.fr       */
+/*   Updated: 2026/08/16 14:06:22 by smasatak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,22 +22,7 @@ void	print_stack(t_stack *s)
 		printf("[%d]\n", s->array[i++]);
 }
 
-// int	main(int argc, char **argv)
-// {
-// 	int	i;
-// 	int	n;
 
-// 	i = 0;
-// 	n = 0;
-// 	if (argc > 2)
-// 		return (0);
-// 	while (i < argc)
-// 	{
-// 		if (argv[1] == "--Simple")
-
-// 	}
-
-// }
 
 
 // int	main(void)
