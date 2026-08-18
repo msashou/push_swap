@@ -3,42 +3,42 @@
 /*                                                        :::      ::::::::   */
 /*   Complex_algorithm.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: smasatak <smasatak@student.42tokyo.jp>     +#+  +:+       +#+        */
+/*   By: rnoda <rnoda@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/12 16:46:02 by smasatak          #+#    #+#             */
-/*   Updated: 2026/08/18 21:43:06 by smasatak         ###   ########.fr       */
+/*   Updated: 2026/08/18 23:13:07 by rnoda            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 #include <stdio.h>
 
-int	attach_index(t_ctx *c)
-{
-	int *idx;
-	int i;
-	int j;
+// int	attach_index(t_ctx *c)
+// {
+// 	int *idx;
+// 	int i;
+// 	int j;
 
-	idx = (int *)malloc(sizeof(int) * c->a.size);
-	if (!idx)
-		return (0);
-	i = -1;
-	while (++i < c->a.size)
-	{
-		j = -1;
-		idx[i] = 0;
-		while (++j < c->a.size)
-		{
-			if (c->a.array[i] > c->a.array[j])
-				idx[i]++;
-		}
-	}
-	i = -1;
-	while (++i < c->a.size)
-		c->a.array[i] = idx[i];
-	free(idx);
-	return (1);
-}
+// 	idx = (int *)malloc(sizeof(int) * c->a.size);
+// 	if (!idx)
+// 		return (0);
+// 	i = -1;
+// 	while (++i < c->a.size)
+// 	{
+// 		j = -1;
+// 		idx[i] = 0;
+// 		while (++j < c->a.size)
+// 		{
+// 			if (c->a.array[i] > c->a.array[j])
+// 				idx[i]++;
+// 		}
+// 	}
+// 	i = -1;
+// 	while (++i < c->a.size)
+// 		c->a.array[i] = idx[i];
+// 	free(idx);
+// 	return (1);
+// }
 
 int	search_bit(t_ctx *c)
 {
@@ -52,7 +52,7 @@ int	search_bit(t_ctx *c)
 	return (bits);
 }
 
-void	radix_sort(t_ctx *c)
+void	complex_sort(t_ctx *c)
 {
 	int	bits;
 	int	i;

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Simple_algolithm.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: smasatak <smasatak@student.42tokyo.jp>     +#+  +:+       +#+        */
+/*   By: rnoda <rnoda@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/11 20:24:49 by smasatak          #+#    #+#             */
-/*   Updated: 2026/08/15 15:22:38 by smasatak         ###   ########.fr       */
+/*   Updated: 2026/08/18 23:13:42 by rnoda            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ static int	find_min_index(t_stack *s)
 	return (min);
 }
 
-void	selection_sort(t_ctx *c)
+void	simple_sort(t_ctx *c)
 {
 	int	min;
 	int	i;

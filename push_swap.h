@@ -6,7 +6,7 @@
 /*   By: rnoda <rnoda@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/20 16:30:27 by rnoda             #+#    #+#             */
-/*   Updated: 2026/08/15 19:23:46 by rnoda            ###   ########.fr       */
+/*   Updated: 2026/08/18 23:14:03 by rnoda            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,7 @@ typedef struct operate_stacks
 	t_op	*ops;
 	int	n_ops;
 	int	counts[11];
+	int is_bench_mode;
 }	t_ctx;
 
 //compute disorder
@@ -95,6 +96,9 @@ int	check_duplicates(int *init_a, int size);
 
 void	record_op(t_ctx *c, t_op op);
 int		attach_index(t_ctx *c);
+
+void	simple_sort(t_ctx *c);
 void	medium_sort(t_ctx *c);
+void	complex_sort(t_ctx *c);
 
 #endif
