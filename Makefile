@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: smasatak <smasatak@student.42tokyo.jp>     +#+  +:+       +#+         #
+#    By: rnoda <rnoda@student.42tokyo.jp>           +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/07/03 19:06:53 by rnoda             #+#    #+#              #
-#    Updated: 2026/08/19 18:51:18 by smasatak         ###   ########.fr        #
+#    Updated: 2026/08/19 21:31:17 by rnoda            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,7 +22,6 @@ SRC = push_swap \
       ft_split \
 	  ft_strlen \
 	  ft_memcmp \
-	  ft_itoa \
 	  ft_atoi \
 	  ft_strdup \
 	  ft_strlcpy \
