@@ -6,7 +6,7 @@
 /*   By: rnoda <rnoda@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/20 16:30:27 by rnoda             #+#    #+#             */
-/*   Updated: 2026/08/19 22:42:30 by rnoda            ###   ########.fr       */
+/*   Updated: 2026/08/19 22:50:48 by rnoda            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,12 +80,6 @@ void		rra(t_ctx *c);
 void		rrb(t_ctx *c);
 void		rrr(t_ctx *c);
 
-void		selection_sort(t_ctx *c);
-// void medium_sort(t_dll **stack_a, t_dll stack_b);
-// void complex_sort(t_dll **stack_a, t_dll stack_b);
-// void three_sort(t_dll **stack_a, t_dll stack_b); // エッジケース用
-// void five_sort(t_dll **stack_a, t_dll stack_b); // エッジケース用
-
 char		**ft_split(char const *s, char c);
 void		*ft_calloc(size_t nmemb, size_t size);
 char		*ft_strjoin(char const *s1, char const *s2);
@@ -110,5 +104,7 @@ int			attach_index(t_ctx *c);
 void		simple_sort(t_ctx *c);
 void		medium_sort(t_ctx *c);
 void		complex_sort(t_ctx *c);
+// void three_sort(t_dll **stack_a, t_dll stack_b); // エッジケース用
+// void five_sort(t_dll **stack_a, t_dll stack_b); // エッジケース用
 
 #endif

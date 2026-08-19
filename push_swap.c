@@ -6,7 +6,7 @@
 /*   By: rnoda <rnoda@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/20 16:36:37 by rnoda             #+#    #+#             */
-/*   Updated: 2026/08/19 22:42:56 by rnoda            ###   ########.fr       */
+/*   Updated: 2026/08/19 22:58:01 by rnoda            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -116,7 +116,17 @@ static void	run_strategy(t_ctx *c, char *strategy, double disorder)
 	if (strategy == NULL || ft_memcmp(strategy, OPTION_ADAPTIVE, 10) == 0)
 	{
 		c->strategy = "Adaptive";
-		if (disorder < 0.2)
+		if (c->a.size == 3)
+		{
+			c->complexity_class = "O(n^2)";
+			three_sort(c);
+		}
+		else if (c->a.size == 5)
+		{
+			c->complexity_class = "O(n^2)";
+			simple_sort(c);
+		}
+		else if (disorder < 0.2)
 		{
 			c->complexity_class = "O(n^2)";
 			simple_sort(c);

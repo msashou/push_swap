@@ -6,7 +6,7 @@
 #    By: rnoda <rnoda@student.42tokyo.jp>           +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/07/03 19:06:53 by rnoda             #+#    #+#              #
-#    Updated: 2026/08/19 21:31:17 by rnoda            ###   ########.fr        #
+#    Updated: 2026/08/19 22:58:23 by rnoda            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -32,6 +32,7 @@ SRC = push_swap \
 	  simple_sort \
 	  medium_sort \
 	  complex_sort \
+	  three_sort \
 	  command_push \
 	  command_reverse_rotate \
 	  command_rotate \
