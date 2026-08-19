@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rnoda <rnoda@student.42tokyo.jp>           +#+  +:+       +#+        */
+/*   By: smasatak <smasatak@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/20 16:30:27 by rnoda             #+#    #+#             */
-/*   Updated: 2026/08/18 23:14:03 by rnoda            ###   ########.fr       */
+/*   Updated: 2026/08/19 20:33:14 by smasatak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,9 +27,6 @@
 #include "unistd.h"
 #include "stdlib.h"
 #include "limits.h"
-// TODO: 後で消す
-#include "stdio.h"
-
 
 //prepare stacks
 typedef struct stack
@@ -87,7 +84,7 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t size);
 int	ft_atoi(const char *nptr);
 int	is_num(char c);
 int	output_err(void);
-
+int	ft_printf(const char *format, ...);
 
 char	**join_and_split(char **av);
 int	validate_args(char **args);

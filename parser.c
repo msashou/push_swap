@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parser.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rnoda <rnoda@student.42tokyo.jp>           +#+  +:+       +#+        */
+/*   By: smasatak <smasatak@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/18 00:25:38 by rnoda             #+#    #+#             */
-/*   Updated: 2026/08/18 00:25:39 by rnoda            ###   ########.fr       */
+/*   Updated: 2026/08/19 21:14:44 by smasatak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,9 +75,9 @@ int	is_int(char *s)
 	if (len < 10)
 		return (1);
 	if (is_minus)
-		return (ft_memcmp(s, ft_itoa(INT_MIN), len) <= 0);
+		return (ft_memcmp(s, "2147483648", len) <= 0);
 	else
-		return (ft_memcmp(s, ft_itoa(INT_MAX), len) <= 0);
+		return (ft_memcmp(s, "2147483647", len) <= 0);
 }
 
 int	is_option(char *s, char *option)
@@ -102,6 +102,8 @@ int	validate_args(char **args)
 	size_t	i;
 
 	i = 0;
+	if (args[0] == NULL)
+		return (0);
 	if (is_int(args[0]) == 0)
 	{
 		if (is_option_bench(args[0]) == 0 && is_option_strategy(args[0]) == 0)

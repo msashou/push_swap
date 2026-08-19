@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   record_op.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rnoda <rnoda@student.42tokyo.jp>           +#+  +:+       +#+        */
+/*   By: smasatak <smasatak@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/15 11:04:36 by smasatak          #+#    #+#             */
-/*   Updated: 2026/08/18 23:31:25 by rnoda            ###   ########.fr       */
+/*   Updated: 2026/08/19 20:40:56 by smasatak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,10 +19,6 @@ void	record_op(t_ctx *c, t_op op)
 		"rr", "rra", "rrb", "rrr"};
 
 	c->counts[op]++;
-	if (c->is_bench_mode == 1) {
-		// nanimo sinai
-	} else {
-		printf("%s\n", names[op]);
-	}
+	ft_printf("%s\n", names[op]);
 	return ;
 }
