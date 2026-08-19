@@ -1,10 +1,21 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: rnoda <rnoda@student.42tokyo.jp>           +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/08/19 22:43:57 by rnoda             #+#    #+#             */
+/*   Updated: 2026/08/19 22:43:58 by rnoda            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "push_swap.h"
 
 char	*ft_strdup(const char *s)
 {
-	char	*dest;
-	size_t	size;
+	char *dest;
+	size_t size;
 
 	size = ft_strlen(s) + 1;
 	dest = (char *)malloc(size);

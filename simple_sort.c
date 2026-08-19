@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Simple_algolithm.c                                 :+:      :+:    :+:   */
+/*   simple_sort.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rnoda <rnoda@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/11 20:24:49 by smasatak          #+#    #+#             */
-/*   Updated: 2026/08/18 23:13:42 by rnoda            ###   ########.fr       */
+/*   Updated: 2026/08/19 22:42:15 by rnoda            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,10 +38,10 @@ void	simple_sort(t_ctx *c)
 		min = find_min_index(&c->a);
 		i = 0;
 		if (min < c->a.size / 2)
-			while(i++ < min)
+			while (i++ < min)
 				ra(c);
 		else
-			while(i++ < c->a.size - min)
+			while (i++ < c->a.size - min)
 				rra(c);
 		pb(c);
 	}

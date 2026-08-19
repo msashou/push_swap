@@ -6,7 +6,7 @@
 /*   By: rnoda <rnoda@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/18 00:25:33 by rnoda             #+#    #+#             */
-/*   Updated: 2026/08/18 23:25:57 by rnoda            ###   ########.fr       */
+/*   Updated: 2026/08/19 22:43:29 by rnoda            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,6 @@ void	medium_phase1(t_ctx *c)
 			ra(c);
 	}
 }
-
 
 static int	get_max_pos(t_stack *b)
 {

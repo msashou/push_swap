@@ -1,11 +1,23 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: rnoda <rnoda@student.42tokyo.jp>           +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/08/19 22:44:15 by rnoda             #+#    #+#             */
+/*   Updated: 2026/08/19 22:44:17 by rnoda            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
 int	ft_atoi(const char *nptr)
 {
-	int		is_negative;
-	size_t	i;
-	int		result;
-	char	*tmp_nptr;
+	int is_negative;
+	size_t i;
+	int result;
+	char *tmp_nptr;
 
 	tmp_nptr = (char *)nptr;
 	is_negative = 1;

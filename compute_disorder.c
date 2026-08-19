@@ -6,7 +6,7 @@
 /*   By: rnoda <rnoda@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/18 00:25:26 by rnoda             #+#    #+#             */
-/*   Updated: 2026/08/18 00:25:27 by rnoda            ###   ########.fr       */
+/*   Updated: 2026/08/19 22:44:27 by rnoda            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,10 @@
 
 double	compute_disorder(t_stack *s)
 {
-	int		i;
-	int		j;
-	long	mistakes;
-	long	total_pairs;
+	int i;
+	int j;
+	long mistakes;
+	long total_pairs;
 
 	if (!s || s->size < 2)
 		return (0.0);
