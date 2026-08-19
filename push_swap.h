@@ -104,7 +104,7 @@ int			attach_index(t_ctx *c);
 void		simple_sort(t_ctx *c);
 void		medium_sort(t_ctx *c);
 void		complex_sort(t_ctx *c);
-// void three_sort(t_dll **stack_a, t_dll stack_b); // エッジケース用
-// void five_sort(t_dll **stack_a, t_dll stack_b); // エッジケース用
+void three_sort(t_ctx *c);
+void five_sort(t_ctx *c);
 
 #endif

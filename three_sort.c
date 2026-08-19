@@ -12,14 +12,33 @@
 
 #include "push_swap.h"
 
-void	three_sort(t_ctx *c)
+void three_sort(t_ctx *c)
 {
 	int top;
 	int mid;
-	int bottom;
+	int bot;
+
 	if (c->a.size != 3)
-		return ;
+		return;
 
-	top 
+	top = c->a.array[0];
+	mid = c->a.array[1];
+	bot = c->a.array[2];
 
+	if (top > mid && mid < bot && top < bot)
+		sa(c);
+	else if (top > mid && mid > bot)
+	{
+		sa(c);
+		rra(c);
+	}
+	else if (top > mid && mid < bot && top > bot)
+		ra(c);
+	else if (top < mid && mid > bot && top < bot)
+	{
+		sa(c);
+		ra(c);
+	}
+	else if (top < mid && mid > bot && top > bot)
+		rra(c);
 }

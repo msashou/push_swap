@@ -107,24 +107,21 @@ static void	print_bench(t_ctx *c)
 	ft_putstr_stderr("\n");
 }
 
-/* ==========================================
-   戦略実行関数（計算量クラスの記録を追加）
-   ========================================== */
-static void	run_strategy(t_ctx *c, char *strategy, double disorder)
+static void	run_strategy(t_ctx *c, char *strategy, double disorder, int size)
 {
 	attach_index(c);
 	if (strategy == NULL || ft_memcmp(strategy, OPTION_ADAPTIVE, 10) == 0)
 	{
 		c->strategy = "Adaptive";
-		if (c->a.size == 3)
+		if (size == 3)
 		{
 			c->complexity_class = "O(n^2)";
 			three_sort(c);
 		}
-		else if (c->a.size == 5)
+		else if (size == 5)
 		{
 			c->complexity_class = "O(n^2)";
-			simple_sort(c);
+			five_sort(c);
 		}
 		else if (disorder < 0.2)
 		{
@@ -199,7 +196,7 @@ int	main(int ac, char **av)
 	c.is_bench_mode = is_bench_mode;
 	c.disorder = compute_disorder(&c.a);
 
-	run_strategy(&c, strategy, c.disorder);
+	run_strategy(&c, strategy, c.disorder, size);
 
 	if (c.is_bench_mode)
 		print_bench(&c);

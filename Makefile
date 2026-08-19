@@ -33,6 +33,7 @@ SRC = push_swap \
 	  medium_sort \
 	  complex_sort \
 	  three_sort \
+	  five_sort \
 	  command_push \
 	  command_reverse_rotate \
 	  command_rotate \
