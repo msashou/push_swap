@@ -6,7 +6,7 @@
 /*   By: rnoda <rnoda@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/20 16:36:37 by rnoda             #+#    #+#             */
-/*   Updated: 2026/08/20 22:41:52 by rnoda            ###   ########.fr       */
+/*   Updated: 2026/08/20 22:48:54 by rnoda            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,6 +55,21 @@ void	first_init(char **strategy, t_ctx *c)
 	c->is_bench_mode = 0;
 }
 
+static int	fail(char **args, int *init_a)
+{
+	int	i;
+
+	i = 0;
+	if (args)
+	{
+		while (args[i])
+			free(args[i++]);
+		free(args);
+	}
+	free(init_a);
+	return (output_err());
+}
+
 int	main(int ac, char **av)
 {
 	char	**args;
@@ -67,14 +82,12 @@ int	main(int ac, char **av)
 		return (0);
 	args = join_and_split(av);
 	if (!args || !validate_args(args))
-		return (output_err());
+		return (fail(args, NULL));
 	size = parse(args, &c.is_bench_mode, &strategy, &c.a.array);
 	if (size == -1 || !check_duplicates(c.a.array, size))
-		return (output_err());
-	if (size == 0)
-		return (cleanup(args, &c));
+		return (fail(args, c.a.array));
 	if (!init_ctx(&c, c.a.array, size))
-		return (output_err());
+		return (fail(args, NULL));
 	c.disorder = compute_disorder(&c.a);
 	run_strategy(&c, strategy, c.disorder, size);
 	if (c.is_bench_mode)
