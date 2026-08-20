@@ -6,7 +6,7 @@
 /*   By: rnoda <rnoda@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/20 19:51:05 by smasatak          #+#    #+#             */
-/*   Updated: 2026/08/20 22:08:14 by rnoda            ###   ########.fr       */
+/*   Updated: 2026/08/20 22:51:21 by rnoda            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,16 +64,14 @@ int	parse(char **args, int *is_bench_mode, char **strategy, int **init_a)
 
 	i = 0;
 	count = 0;
+	*strategy = NULL;
 	if (is_option_bench(args[i]))
 	{
 		*is_bench_mode = 1;
 		i++;
 	}
 	if (is_option_strategy(args[i]))
-	{
-		*strategy = args[i];
-		i++;
-	}
+		*strategy = args[i++];
 	while (args[i + count])
 		count++;
 	*init_a = (int *)malloc(sizeof(int) * count);
