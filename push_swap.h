@@ -3,15 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rnoda <rnoda@student.42tokyo.jp>           +#+  +:+       +#+        */
+/*   By: smasatak <smasatak@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/20 16:30:27 by rnoda             #+#    #+#             */
-/*   Updated: 2026/08/19 22:50:48 by rnoda            ###   ########.fr       */
+/*   Updated: 2026/08/20 19:58:40 by smasatak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP
-# define PUSH_SWAP
+#ifndef PUSH_SWAP_H
+# define PUSH_SWAP_H
 
 # define SIMPLE "simple"
 # define MEDIUM "medium"
@@ -104,7 +104,7 @@ int			attach_index(t_ctx *c);
 void		simple_sort(t_ctx *c);
 void		medium_sort(t_ctx *c);
 void		complex_sort(t_ctx *c);
-void three_sort(t_ctx *c);
-void five_sort(t_ctx *c);
+void		three_sort(t_ctx *c);
+void		five_sort(t_ctx *c);
 
 #endif

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   five_sort.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rnoda <rnoda@student.42tokyo.jp>           +#+  +:+       +#+        */
+/*   By: smasatak <smasatak@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/19 23:33:20 by rnoda             #+#    #+#             */
-/*   Updated: 2026/08/19 23:33:22 by rnoda            ###   ########.fr       */
+/*   Updated: 2026/08/20 19:35:36 by smasatak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,9 +56,7 @@ void	five_sort(t_ctx *c)
 {
 	push_min_to_b(c);
 	push_min_to_b(c);
-
 	three_sort(c);
-
 	pa(c);
 	pa(c);
 }

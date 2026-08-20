@@ -3,16 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   medium_sort.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rnoda <rnoda@student.42tokyo.jp>           +#+  +:+       +#+        */
+/*   By: smasatak <smasatak@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/18 00:25:33 by rnoda             #+#    #+#             */
-/*   Updated: 2026/08/19 22:43:29 by rnoda            ###   ########.fr       */
+/*   Updated: 2026/08/20 19:45:29 by smasatak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-// sizeの平方根くらいの値を返す
 static int	get_chunk_size(int size)
 {
 	if (size <= 20)
@@ -22,7 +21,6 @@ static int	get_chunk_size(int size)
 	return (30);
 }
 
-// 全部bに送る
 void	medium_phase1(t_ctx *c)
 {
 	int	pushed_count;

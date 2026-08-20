@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   attach_index.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rnoda <rnoda@student.42tokyo.jp>           +#+  +:+       +#+        */
+/*   By: smasatak <smasatak@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/18 00:24:44 by rnoda             #+#    #+#             */
-/*   Updated: 2026/08/18 00:24:45 by rnoda            ###   ########.fr       */
+/*   Updated: 2026/08/20 19:49:46 by smasatak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 int	attach_index(t_ctx *c)
 {
-	int *idx;
-	int i;
-	int j;
+	int	*idx;
+	int	i;
+	int	j;
 
 	idx = (int *)malloc(sizeof(int) * c->a.size);
 	if (!idx)

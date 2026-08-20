@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rnoda <rnoda@student.42tokyo.jp>           +#+  +:+       +#+        */
+/*   By: smasatak <smasatak@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/19 22:44:15 by rnoda             #+#    #+#             */
-/*   Updated: 2026/08/19 22:44:17 by rnoda            ###   ########.fr       */
+/*   Updated: 2026/08/20 20:20:08 by smasatak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,10 @@
 
 int	ft_atoi(const char *nptr)
 {
-	int is_negative;
-	size_t i;
-	int result;
-	char *tmp_nptr;
+	int		is_negative;
+	size_t	i;
+	char	*tmp_nptr;
+	int		result;
 
 	tmp_nptr = (char *)nptr;
 	is_negative = 1;

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   command_reverse_rotate.c                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rnoda <rnoda@student.42tokyo.jp>           +#+  +:+       +#+        */
+/*   By: smasatak <smasatak@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/12 12:20:47 by smasatak          #+#    #+#             */
-/*   Updated: 2026/08/19 22:44:40 by rnoda            ###   ########.fr       */
+/*   Updated: 2026/08/20 19:34:16 by smasatak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ static void	reverse_rotate(t_stack *s)
 	int	tmp;
 	int	i;
 
+	if (s->size < 2)
+		return ;
 	tmp = s->array[s->size - 1];
 	i = s->size - 1;
 	while (i >= 1)
@@ -32,6 +34,7 @@ void	rra(t_ctx *c)
 	reverse_rotate(&c->a);
 	record_op(c, OP_RRA);
 }
+
 void	rrb(t_ctx *c)
 {
 	reverse_rotate(&c->b);

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rnoda <rnoda@student.42tokyo.jp>           +#+  +:+       +#+        */
+/*   By: smasatak <smasatak@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/19 22:43:52 by rnoda             #+#    #+#             */
-/*   Updated: 2026/08/19 22:43:54 by rnoda            ###   ########.fr       */
+/*   Updated: 2026/08/20 19:44:37 by smasatak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,11 @@
 
 char	*ft_strjoin(char const *s1, char const *s2)
 {
-	size_t s1_len;
-	size_t s2_len;
-	char *r;
-	size_t i;
-	size_t k;
+	size_t	s1_len;
+	size_t	s2_len;
+	char	*r;
+	size_t	i;
+	size_t	k;
 
 	if (s1 == NULL || s2 == NULL)
 		return (NULL);

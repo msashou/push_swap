@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   simple_sort.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rnoda <rnoda@student.42tokyo.jp>           +#+  +:+       +#+        */
+/*   By: smasatak <smasatak@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/11 20:24:49 by smasatak          #+#    #+#             */
-/*   Updated: 2026/08/19 22:42:15 by rnoda            ###   ########.fr       */
+/*   Updated: 2026/08/20 19:57:22 by smasatak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,11 @@ void	simple_sort(t_ctx *c)
 
 	while (c->a.size > 0)
 	{
+		if (c->a.size == 1)
+		{
+			pb(c);
+			continue ;
+		}
 		min = find_min_index(&c->a);
 		i = 0;
 		if (min < c->a.size / 2)
