@@ -6,7 +6,7 @@
 /*   By: rnoda <rnoda@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/15 11:04:36 by smasatak          #+#    #+#             */
-/*   Updated: 2026/08/20 22:21:48 by rnoda            ###   ########.fr       */
+/*   Updated: 2026/08/20 22:28:12 by rnoda            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,6 @@ void	record_op(t_ctx *c, t_op op)
 
 	c->counts[op]++;
 	c->total_ops++;
-
 	ft_printf("%s\n", names[op]);
 	return ;
 }
