@@ -6,7 +6,7 @@
 /*   By: rnoda <rnoda@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/20 19:51:05 by smasatak          #+#    #+#             */
-/*   Updated: 2026/08/20 22:51:21 by rnoda            ###   ########.fr       */
+/*   Updated: 2026/08/20 23:10:17 by rnoda            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,6 +80,8 @@ int	parse(char **args, int *is_bench_mode, char **strategy, int **init_a)
 	j = 0;
 	while (args[i])
 		(*init_a)[j++] = ft_atoi(args[i++]);
+	if (count == 1 || is_sorted(*init_a, count))
+		return (1);
 	return (count);
 }
 

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: smasatak <smasatak@student.42tokyo.jp>     +#+  +:+       +#+        */
+/*   By: rnoda <rnoda@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/20 16:30:27 by rnoda             #+#    #+#             */
-/*   Updated: 2026/08/20 21:54:18 by smasatak         ###   ########.fr       */
+/*   Updated: 2026/08/20 23:09:30 by rnoda            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -116,5 +116,6 @@ void		run_strategy(t_ctx *c, char *strategy, double disorder, int size);
 void		ft_putstr_stderr(char *s);
 void		ft_putnbr_stderr(int n);
 void		print_bench(t_ctx *c);
+int			is_sorted(int *arr, int size);
 
 #endif

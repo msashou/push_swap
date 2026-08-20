@@ -6,7 +6,7 @@
 #    By: rnoda <rnoda@student.42tokyo.jp>           +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/07/03 19:06:53 by rnoda             #+#    #+#              #
-#    Updated: 2026/08/20 21:26:42 by rnoda            ###   ########.fr        #
+#    Updated: 2026/08/20 23:09:42 by rnoda            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -43,7 +43,8 @@ SRC = push_swap \
 	  parser2 \
 	  strategy_dispatch \
 	  bench_output \
-	  ft_putnbr_stderr
+	  ft_putnbr_stderr \
+	  is_sorted
 
 
 SRCS = $(addsuffix .c, $(SRC))

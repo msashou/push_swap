@@ -6,7 +6,7 @@
 /*   By: rnoda <rnoda@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/20 16:36:37 by rnoda             #+#    #+#             */
-/*   Updated: 2026/08/20 22:48:54 by rnoda            ###   ########.fr       */
+/*   Updated: 2026/08/20 23:07:23 by rnoda            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,6 +84,8 @@ int	main(int ac, char **av)
 	if (!args || !validate_args(args))
 		return (fail(args, NULL));
 	size = parse(args, &c.is_bench_mode, &strategy, &c.a.array);
+	if (size == 1)
+		return (0);
 	if (size == -1 || !check_duplicates(c.a.array, size))
 		return (fail(args, c.a.array));
 	if (!init_ctx(&c, c.a.array, size))
