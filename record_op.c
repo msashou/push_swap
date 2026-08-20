@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   record_op.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: smasatak <smasatak@student.42tokyo.jp>     +#+  +:+       +#+        */
+/*   By: rnoda <rnoda@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/15 11:04:36 by smasatak          #+#    #+#             */
-/*   Updated: 2026/08/20 19:47:31 by smasatak         ###   ########.fr       */
+/*   Updated: 2026/08/20 22:21:48 by rnoda            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	record_op(t_ctx *c, t_op op)
 
 	c->counts[op]++;
 	c->total_ops++;
-	if (c->is_bench_mode == 0)
-		ft_printf("%s\n", names[op]);
+
+	ft_printf("%s\n", names[op]);
 	return ;
 }
