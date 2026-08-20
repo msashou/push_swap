@@ -6,7 +6,7 @@
 /*   By: rnoda <rnoda@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/20 16:36:37 by rnoda             #+#    #+#             */
-/*   Updated: 2026/08/20 22:28:02 by rnoda            ###   ########.fr       */
+/*   Updated: 2026/08/20 22:41:52 by rnoda            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ static int	init_ctx(t_ctx *c, int *init_a, int size)
 	return (1);
 }
 
-static void	cleanup(char **args, t_ctx *c)
+static int	cleanup(char **args, t_ctx *c)
 {
 	int	i;
 
@@ -45,6 +45,14 @@ static void	cleanup(char **args, t_ctx *c)
 	free(args);
 	free(c->a.array);
 	free(c->b.array);
+	return (1);
+}
+
+void	first_init(char **strategy, t_ctx *c)
+{
+	strategy = NULL;
+	c->a.array = NULL;
+	c->is_bench_mode = 0;
 }
 
 int	main(int ac, char **av)
@@ -54,9 +62,7 @@ int	main(int ac, char **av)
 	int		size;
 	t_ctx	c;
 
-	strategy = NULL;
-	c.a.array = NULL;
-	c.is_bench_mode = 0;
+	first_init(&strategy, &c);
 	if (ac < 2)
 		return (0);
 	args = join_and_split(av);
@@ -66,10 +72,7 @@ int	main(int ac, char **av)
 	if (size == -1 || !check_duplicates(c.a.array, size))
 		return (output_err());
 	if (size == 0)
-	{
-		cleanup(args, &c);
-		return (1);
-	}
+		return (cleanup(args, &c));
 	if (!init_ctx(&c, c.a.array, size))
 		return (output_err());
 	c.disorder = compute_disorder(&c.a);
