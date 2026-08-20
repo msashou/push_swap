@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   bench_output.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: smasatak <smasatak@student.42tokyo.jp>     +#+  +:+       +#+        */
+/*   By: rnoda <rnoda@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/20 20:14:35 by smasatak          #+#    #+#             */
-/*   Updated: 2026/08/20 21:34:35 by smasatak         ###   ########.fr       */
+/*   Updated: 2026/08/20 22:07:24 by rnoda            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,6 @@ void	print_bench_sub1(t_ctx *c)
 	ft_putnbr_stderr(c->counts[OP_PA]);
 	ft_putstr_stderr(" pb: ");
 	ft_putnbr_stderr(c->counts[OP_PB]);
-	ft_putstr_stderr("\n");
 }
 
 void	print_bench_sub2(t_ctx *c)

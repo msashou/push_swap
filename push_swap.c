@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: smasatak <smasatak@student.42tokyo.jp>     +#+  +:+       +#+        */
+/*   By: rnoda <rnoda@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/20 16:36:37 by rnoda             #+#    #+#             */
-/*   Updated: 2026/08/20 21:03:21 by smasatak         ###   ########.fr       */
+/*   Updated: 2026/08/20 21:58:05 by rnoda            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,6 +65,11 @@ int	main(int ac, char **av)
 	size = parse(args, &c.is_bench_mode, &strategy, &c.a.array);
 	if (size == -1 || !check_duplicates(c.a.array, size))
 		return (output_err());
+	if (size == 0)
+	{
+		cleanup(args, &c);
+		return (1);
+	}
 	if (!init_ctx(&c, c.a.array, size))
 		return (output_err());
 	c.disorder = compute_disorder(&c.a);

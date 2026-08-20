@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   strategy_dispatch.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: smasatak <smasatak@student.42tokyo.jp>     +#+  +:+       +#+        */
+/*   By: rnoda <rnoda@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/20 20:46:45 by smasatak          #+#    #+#             */
-/*   Updated: 2026/08/20 20:54:07 by smasatak         ###   ########.fr       */
+/*   Updated: 2026/08/20 21:59:13 by rnoda            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ static void	adaptive_by_disorder(t_ctx *c, double disorder)
 static void	run_adaptive(t_ctx *c, double disorder, int size)
 {
 	c->strategy = "Adaptive";
-	c->complexity_class = "O(n^2)";
+	c->complexity_class = "O(n\\sqrt{n})";
 	if (size == 3)
 		three_sort(c);
 	else if (size == 5)
