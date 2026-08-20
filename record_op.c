@@ -6,7 +6,7 @@
 /*   By: smasatak <smasatak@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/15 11:04:36 by smasatak          #+#    #+#             */
-/*   Updated: 2026/08/20 19:47:31 by smasatak         ###   ########.fr       */
+/*   Updated: 2026/08/20 21:53:18 by smasatak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,6 @@ void	record_op(t_ctx *c, t_op op)
 
 	c->counts[op]++;
 	c->total_ops++;
-	if (c->is_bench_mode == 0)
-		ft_printf("%s\n", names[op]);
+	ft_printf("%s\n", names[op]);
 	return ;
 }
