@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   bench_output.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: smasatak <smasatak@student.42tokyo.jp>     +#+  +:+       +#+        */
+/*   By: rnoda <rnoda@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/20 20:14:35 by smasatak          #+#    #+#             */
-/*   Updated: 2026/08/20 20:22:55 by smasatak         ###   ########.fr       */
+/*   Updated: 2026/08/20 21:25:25 by rnoda            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,34 +35,48 @@ static void	print_bench_header(t_ctx *c)
 	ft_putstr_stderr("\n");
 }
 
-static void	print_bench(t_ctx *c)
+void	print_bench_sub1(t_ctx *c)
+{
+	ft_putstr_stderr("\n[bench] sa: ");
+	ft_putnbr_stderr(c->counts[OP_SA]);
+	ft_putstr_stderr(" sb: ");
+	ft_putnbr_stderr(c->counts[OP_SB]);
+	ft_putstr_stderr(" ss: ");
+	ft_putnbr_stderr(c->counts[OP_SS]);
+	ft_putstr_stderr(" pa: ");
+	ft_putnbr_stderr(c->counts[OP_PA]);
+	ft_putstr_stderr(" pb: ");
+	ft_putnbr_stderr(c->counts[OP_PB]);
+}
+
+void	print_bench_sub2(t_ctx *c)
+{
+	ft_putstr_stderr("\n[bench] ra: ");
+	ft_putnbr_stderr(c->counts[OP_RA]);
+	ft_putstr_stderr(" rb: ");
+	ft_putnbr_stderr(c->counts[OP_RB]);
+	ft_putstr_stderr(" rr: ");
+	ft_putnbr_stderr(c->counts[OP_RR]);
+	ft_putstr_stderr(" rra: ");
+	ft_putnbr_stderr(c->counts[OP_RRA]);
+	ft_putstr_stderr(" rrb: ");
+	ft_putnbr_stderr(c->counts[OP_RRB]);
+	ft_putstr_stderr(" rrr: ");
+	ft_putnbr_stderr(c->counts[OP_RRR]);
+}
+
+void	print_bench(t_ctx *c)
 {
 	print_bench_header(c);
 	ft_putstr_stderr("[bench] total_ops: ");
 	ft_putnbr_stderr(c->total_ops);
-	ft_putstr_stderr("\n[bench] sa: ");
-	ft_putnbr_stderr(c->counts[OP_SA]);
-	print_bench_counts(c);
+	print_bench_sub1(c);
+	print_bench_sub2(c);
 }
 
-static void	ft_putnbr_stderr(int n)
-{
-	long	num;
-	char	c;
 
-	num = n;
-	if (num < 0)
-	{
-		write(2, "-", 1);
-		num = -num;
-	}
-	if (num >= 10)
-		ft_putnbr_stderr(num / 10);
-	c = (num % 10) + '0';
-	write(2, &c, 1);
-}
 
-static void	ft_putstr_stderr(char *s)
+void	ft_putstr_stderr(char *s)
 {
 	if (!s)
 		return ;

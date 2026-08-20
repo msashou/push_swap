@@ -6,7 +6,7 @@
 #    By: rnoda <rnoda@student.42tokyo.jp>           +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/07/03 19:06:53 by rnoda             #+#    #+#              #
-#    Updated: 2026/08/19 22:58:23 by rnoda            ###   ########.fr        #
+#    Updated: 2026/08/20 21:26:42 by rnoda            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -39,7 +39,11 @@ SRC = push_swap \
 	  command_rotate \
 	  command_swap \
 	  compute_disorder \
-	  record_op
+	  record_op \
+	  parser2 \
+	  strategy_dispatch \
+	  bench_output \
+	  ft_putnbr_stderr
 
 
 SRCS = $(addsuffix .c, $(SRC))
