@@ -6,7 +6,7 @@
 /*   By: smasatak <smasatak@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/20 16:36:37 by rnoda             #+#    #+#             */
-/*   Updated: 2026/08/20 20:53:49 by smasatak         ###   ########.fr       */
+/*   Updated: 2026/08/20 21:03:21 by smasatak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,10 @@ static int	init_ctx(t_ctx *c, int *init_a, int size)
 	c->a.size = size;
 	c->b.array = (int *)malloc(sizeof(int) * size);
 	if (!c->b.array)
+	{
+		free(init_a);
 		return (0);
+	}
 	c->b.size = 0;
 	c->disorder = 0;
 	c->strategy = NULL;
@@ -63,10 +66,7 @@ int	main(int ac, char **av)
 	if (size == -1 || !check_duplicates(c.a.array, size))
 		return (output_err());
 	if (!init_ctx(&c, c.a.array, size))
-	{
-		free(c.a.array);
 		return (output_err());
-	}
 	c.disorder = compute_disorder(&c.a);
 	run_strategy(&c, strategy, c.disorder, size);
 	if (c.is_bench_mode)

@@ -6,7 +6,7 @@
 /*   By: smasatak <smasatak@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/18 00:25:38 by rnoda             #+#    #+#             */
-/*   Updated: 2026/08/20 20:53:27 by smasatak         ###   ########.fr       */
+/*   Updated: 2026/08/20 21:01:45 by smasatak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,8 +78,7 @@ int	is_int(char *s)
 		return (1);
 	if (is_minus)
 		return (ft_memcmp(s, "2147483648", len) <= 0);
-	else
-		return (ft_memcmp(s, "2147483647", len) <= 0);
+	return (ft_memcmp(s, "2147483647", len) <= 0);
 }
 
 int	is_option(char *s, char *option)

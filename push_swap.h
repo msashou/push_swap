@@ -6,7 +6,7 @@
 /*   By: smasatak <smasatak@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/20 16:30:27 by rnoda             #+#    #+#             */
-/*   Updated: 2026/08/20 19:58:40 by smasatak         ###   ########.fr       */
+/*   Updated: 2026/08/20 21:07:00 by smasatak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,10 +93,16 @@ int			output_err(void);
 int			ft_printf(const char *format, ...);
 
 char		**join_and_split(char **av);
+int			is_all_digits(char *s);
+int			is_int(char *s);
+int			is_option(char *s, char *option);
+int			is_option_bench(char *s);
+int			is_option_strategy(char *s);
 int			validate_args(char **args);
 int			parse(char **args, int *is_bench_mode, char **strategy,
 				int **init_a);
 int			check_duplicates(int *init_a, int size);
+void		print_bench(t_ctx *c);
 
 void		record_op(t_ctx *c, t_op op);
 int			attach_index(t_ctx *c);
@@ -106,5 +112,6 @@ void		medium_sort(t_ctx *c);
 void		complex_sort(t_ctx *c);
 void		three_sort(t_ctx *c);
 void		five_sort(t_ctx *c);
+void		run_strategy(t_ctx *c, char *strategy, double disorder, int size);
 
 #endif
